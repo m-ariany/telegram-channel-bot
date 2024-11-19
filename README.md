@@ -15,17 +15,11 @@ This is a Telegram bot that uses the Gilas Moderation API to moderate comments i
    ```bash
    git clone https://github.com/m-ariany/telegram-channel-bot.git
    cd telegram-channel-bot
-   ```
 
-2. **Install the required packages:**
-
-   Make sure you have `pip` installed, then run:
-
-   ```bash
    pip install -r requirements.txt
    ```
 
-3. **Set up environment variables:**
+2. **Set up environment variables:**
 
    You need to set up the following environment variables:
 
@@ -46,7 +40,7 @@ This is a Telegram bot that uses the Gilas Moderation API to moderate comments i
    GILAS_API_KEY=your-gilas-api-key
    ```
 
-4. **Run the bot:**
+3. **Run the bot:**
 
    Start the bot by running the following command:
 
@@ -56,13 +50,21 @@ This is a Telegram bot that uses the Gilas Moderation API to moderate comments i
 
    The bot will start polling for messages and will automatically delete any comments flagged by the Gilas Moderation API.
 
-## Logging
+## How to set up a Telegram bot and add it as an Admin to a channel?
 
-The bot logs errors to the console. You can adjust the logging level by modifying the `logging.basicConfig(level=logging.ERROR)` line in `main.py`.
-
-## Contributing
-
-Feel free to submit issues or pull requests if you have any improvements or bug fixes.
+- Create a bot using Telegram BotFather.
+- Ensure your bot has the following settings:
+   - Group Privacy: Off
+   - Channel Admin Rights:
+      - Manage Channel
+      - Delete Messages
+   - Group Admin Rights:
+      - Manage Chat
+      - Delete Messages
+- Add your bot to your channel as an admin (this can be tricky):
+   - First, add your bot as a subscriber to the channel.
+      - If this is not possible, add it along with some regular users (this is the trick).
+   - Then promote it to admin with the required permissions.
 
 ## License
 
